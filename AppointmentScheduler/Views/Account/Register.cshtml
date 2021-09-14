@@ -4,7 +4,7 @@
 <form method="post" asp-action="Register" asp-controller="Account">
     <h5>Create a new account</h5>
     <hr />
-
+    <div asp-validation-summary="All" class="Text-Danger"></div>
     <div class="form-group row">
         <label class="col-md-2" asp-for="Name"></label>
         <div class="col-md-10">
