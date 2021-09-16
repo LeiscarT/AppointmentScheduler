@@ -31,7 +31,6 @@ namespace AppointmentScheduler.Controllers
             return View();
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
@@ -41,7 +40,7 @@ namespace AppointmentScheduler.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if(result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Appointment");
                 }     
                 ModelState.AddModelError("", "Invalid login attempt");
             }
@@ -81,7 +80,6 @@ namespace AppointmentScheduler.Controllers
                     ModelState.AddModelError("", error.Description);
                 }
             }
-
             return View(model);
         }
 
