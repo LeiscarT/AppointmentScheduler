@@ -7,14 +7,16 @@ function InitializeCalendar(){
     try{
         $('#calendar').fullCalendar({
             timezone: false,
-            header:{
+            header:
+            {
                 left: 'prev,next,today',
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
             selectable:true,
             editable:false,
-            select: function(event){
+            select: function(event)
+            {
                 onShowModal(event, null);
             }
         })
@@ -27,4 +29,8 @@ function InitializeCalendar(){
 function onShowModal(obj, IsEventDetail) 
 {
     $("#appointmentInput").modal("show");
+}
+
+function onCloseModal() {
+    $("#appointmentInput").modal("hide");
 }

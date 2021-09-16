@@ -51,8 +51,16 @@ namespace AppointmentScheduler.Controllers
         {
             if(!_roleManager.RoleExistsAsync(Helper.Admin).GetAwaiter().GetResult()){
                 _roleManager.CreateAsync(new IdentityRole(Helper.Admin));
-                _roleManager.CreateAsync(new IdentityRole(Helper.Doctor));
+            }
+
+            if (!_roleManager.RoleExistsAsync(Helper.Patient).GetAwaiter().GetResult())
+            {
                 _roleManager.CreateAsync(new IdentityRole(Helper.Patient));
+            }
+
+            if (!_roleManager.RoleExistsAsync(Helper.Doctor).GetAwaiter().GetResult())
+            {
+                _roleManager.CreateAsync(new IdentityRole(Helper.Doctor));
             }
             return View();
         }
