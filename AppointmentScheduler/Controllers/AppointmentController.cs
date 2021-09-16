@@ -22,7 +22,7 @@ namespace AppointmentScheduler.Controllers
 
         public IActionResult Index()
         {
-            _appointmentService.GetDoctorList();
+            ViewBag.DoctorList =  _appointmentService.GetDoctorList();
             return View();
         }
     }   
