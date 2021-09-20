@@ -11,6 +11,15 @@ namespace AppointmentScheduler.Utility
         public static string Admin = "Admin";
         public static string Patient = "Patient";
         public static string Doctor = "Doctor";
+        public static string AppoinmentAdded = "Appointment added Succesfully.";
+        public static string AppoinmentUpdated = "Appointment updated Succesfully.";
+        public static string AppoinmentDeleted = "Appointment deleted Succesfully.";
+        public static string AppoinmentExist = "Appointment for selected date and time already exist.";
+        public static string AppoinmentError = "Something went wrong, Please try again.";
+        public static int Success_Code = 1;
+        public static int Failure_Code = 0;
+
+       
 
         public static List<SelectListItem> GetRolesForDropDown()
         {
